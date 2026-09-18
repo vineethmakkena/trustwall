@@ -1,57 +1,97 @@
 # TrustWall
 
-TrustWall is a testimonial and social proof collection platform for businesses that want to collect customer feedback, moderate reviews, and showcase approved stories publicly.
-
-## Project Overview
-
-TrustWall helps business owners create dedicated testimonial spaces, collect customer reviews without requiring customer logins, and present approved testimonials on a polished public wall. The platform is designed for simplicity, moderation, and scalable social proof marketing.
+TrustWall is a testimonial and social-proof collection platform that helps businesses collect, manage, organize, and share customer testimonials through public testimonial walls and embeddable widgets.
 
 ## Problem Statement
 
-Many businesses struggle to collect, organize, and display customer testimonials in a way that feels professional and trustworthy. Public review collection often becomes fragmented across emails, spreadsheets, and social channels, while owners need a reliable moderation workflow to maintain quality and brand consistency.
+Businesses often collect customer feedback through different channels, making it difficult to organize, manage, and display testimonials in one place.
 
-TrustWall solves this by providing:
-- a private owner dashboard for managing spaces,
-- public testimonial collection flows for customers,
-- moderation tools to approve or reject stories,
-- and public showcase pages for approved social proof.
+TrustWall provides a centralized platform where users can:
+
+* Create testimonial collection spaces
+* Share collection links with customers
+* Manage submitted testimonials
+* View testimonial insights
+* Create public testimonial walls
+* Generate embed code for websites
 
 ## Features
 
-- Owner authentication and session-based access using JWT cookies
-- Multiple testimonial spaces per owner
-- Public testimonial collection without customer login
-- Moderation workflow: pending, approved, rejected, archived
-- Public wall with approved reviews only
-- Rating summaries and rating distribution
-- Optional customer avatar upload
-- Dashboard statistics and quick metrics
-- Embed generation for website owners
-- Settings management for profile updates and password changes
-- Responsive SaaS-style UI with loading, empty, and error states
+### Authentication
+
+* User registration and login
+* Protected dashboard routes
+* Authentication-based access to user data
+
+### Dashboard
+
+* Overview of testimonial activity
+* Manage testimonial spaces
+* View collected testimonials
+* View insights and analytics
+
+### Testimonial Collection
+
+* Create testimonial collection spaces
+* Generate shareable collection links
+* Allow customers to submit testimonials
+* Store testimonial data in MongoDB
+
+### Testimonial Management
+
+* View collected testimonials
+* Manage testimonials by space
+* Organize customer feedback
+* Copy collection links easily
+
+### Public Testimonial Wall
+
+* Display testimonials on a public page
+* Share public testimonial wall links
+* Present customer feedback in a dedicated layout
+
+### Embed Generator
+
+* Generate embed code for testimonial walls
+* Use testimonials on external websites
+
+### Settings
+
+* Manage account and application settings
+* Configure available user preferences
 
 ## Tech Stack
 
-Frontend:
-- React
-- Vite
-- React Router
-- Axios
-- Lucide React
+### Frontend
 
-Backend:
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- JWT
-- bcryptjs
-- Multer
-- Cookie Parser
-- CORS
+* React
+* Vite
+* JavaScript
+* HTML
+* CSS
+* Axios
+* Lucide React
 
-## Screenshots Placeholder
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT-based authentication
+
+### Other Libraries and Services
+
+* **Axios:** Used for making HTTP requests from the frontend to the backend.
+* **Express.js:** Used to build REST APIs and backend business logic.
+* **MongoDB:** Used to store users, spaces, and testimonials.
+* **Mongoose:** Used for MongoDB schema design and database interaction.
+* **JWT:** Used for authentication and protected routes.
+* **Vite:** Used for frontend development and build tooling.
+* **Lucide React:** Used for interface icons.
+
 ## Screenshots
+
 
 ### Sign Up Page
 
@@ -65,33 +105,33 @@ Backend:
 
 ![Overview Page](docs/screenshots/3.overview%20page%20.png)
 
-### Overview Details
+### Overview Page - Additional View
 
-![Overview Details](docs/screenshots/3.1.overview%202.png)
+![Overview Page Additional View](docs/screenshots/3.1.overview%202.png)
 
 ### Spaces Page
 
 ![Spaces Page](docs/screenshots/4.spaces%20page%20.png)
 
-### Testimonials Page
-
-![Testimonials Page](docs/screenshots/5.testimonials%20page%20.png)
-
 ### Space Creation Page
 
 ![Space Creation Page](docs/screenshots/5.space%20creation%20page%20%20.png)
 
+### Testimonials Page
+
+![Testimonials Page](docs/screenshots/5.testimonials%20page%20.png)
+
 ### Insights Page
 
-![Insights Page](docs/screenshots/6.INsights%20page%20.png)
+![Insights Page](docs/screenshots/6.INsights%20page.png)
 
 ### Settings Page
 
 ![Settings Page](docs/screenshots/7.setting%20page%20.png)
 
-### Settings Details
+### Settings Page - Additional View
 
-![Settings Details](docs/screenshots/7.1setting%20page%202.png)
+![Settings Page Additional View](docs/screenshots/7.1setting%20page%202.png)
 
 ### Embed Generator
 
@@ -101,19 +141,19 @@ Backend:
 
 ![Public Wall](docs/screenshots/9.public%20wall.png)
 
-### Public Wall Details
+### Public Wall - Additional View
 
-![Public Wall Details](docs/screenshots/9.1public%20wall%202.png)
+![Public Wall Additional View](docs/screenshots/9.1public%20wall%202.png)
 
-### Collection Link
+### Copy Collection Link Page
 
-![Collection Link](docs/screenshots/10.copy%20collection%20link%20page%20%5C.png)
+![Copy Collection Link Page](docs/screenshots/10.copy%20collection%20link%20page%20%5C.png)
 
-### Collection Link Details
+### Copy Collection Link Page - Additional View
 
-![Collection Link Details](docs/screenshots/10.1cpy%20link%20collection%20page%202.png)
+![Copy Collection Link Page Additional View](docs/screenshots/10.1cpy%20link%20collection%20page%202.png)
 
-## Folder Structure
+## Project Structure
 
 ```text
 trustwall/
@@ -121,97 +161,113 @@ trustwall/
 │   ├── public/
 │   ├── src/
 │   │   ├── components/
-│   │   ├── context/
-│   │   ├── hooks/
-│   │   ├── lib/
 │   │   ├── pages/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
+│   │   ├── services/
+│   │   ├── context/
+│   │   └── App.jsx
 │   ├── package.json
 │   └── vite.config.js
+│
 ├── server/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   ├── app.js
-│   │   └── server.js
-│   ├── uploads/
-│   ├── .env.example
-│   └── package.json
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+│
 ├── docs/
-│   ├── api.md
-│   └── testing-checklist.md
+│   └── screenshots/
+│
 ├── .gitignore
-├── .env.example
-├── README.md
-└── package.json (optional root-level orchestration file if added later)
+└── README.md
 ```
+
+
+
+## Prerequisites
+
+Install the following before running the project:
+
+* Node.js
+* npm
+* MongoDB
+* Git
 
 ## Installation
 
-1. Clone the repository.
-2. Install server dependencies:
+Clone the repository:
 
 ```bash
-cd trustwall/server
+git clone https://github.com/vineethmakkena/trustwall.git
+cd trustwall
+```
+
+## Backend Setup
+
+Navigate to the server directory:
+
+```bash
+cd server
 npm install
 ```
 
-3. Install client dependencies:
+Create the environment file:
 
 ```bash
-cd ../client
-npm install
+cp .env.example .env
 ```
 
-4. Create your local environment file.
+Open the `.env` file and configure the required variables.
 
-You can copy the template from the project root:
-
-```bash
-cp .env.example server/.env
-```
-
-or create the file manually in `server/` using the values shown below.
-
-## Environment Variables
-
-Create a local file named `server/.env` and configure the following values:
+Example:
 
 ```env
 PORT=5001
-CLIENT_URL=http://localhost:5173
 MONGO_URI=mongodb://127.0.0.1:27017/trustwall
-JWT_SECRET=replace-with-a-secure-local-secret
-NODE_ENV=development
+JWT_SECRET=your_secure_jwt_secret
+CLIENT_URL=http://localhost:5173
 ```
 
-Notes:
-- Never commit real secrets to Git.
-- Use a strong random JWT secret in local development and production.
-- Keep credentials out of source control.
 
-## Running the Backend
 
-From the `server` folder:
+## Database Setup
+
+TrustWall uses MongoDB.
+
+Make sure MongoDB is running locally or provide a MongoDB connection string through the `MONGO_URI` environment variable.
+
+The default local database name is:
+
+```text
+trustwall
+```
+
+The application creates and uses the required collections through the backend models.
+
+## Run the Backend
+
+From the `server` directory:
 
 ```bash
-cd trustwall/server
 npm run dev
 ```
 
 The backend runs on:
-- `http://localhost:5001`
 
-Health endpoint:
+```text
+http://localhost:5001
+```
 
-```bash
-curl http://localhost:5001/api/health
+### Backend Health Check
+
+Open the following URL in your browser or API client:
+
+```text
+http://localhost:5001/api/health
 ```
 
 Expected response:
@@ -223,119 +279,244 @@ Expected response:
 }
 ```
 
-## Running the Frontend
+## Frontend Setup
 
-From the `client` folder:
+Open a new terminal window and navigate to the client directory:
 
 ```bash
-cd trustwall/client
+cd client
+npm install
+```
+
+If the frontend requires an environment file, create it using the project’s environment example file and configure the backend API URL.
+
+Example:
+
+```env
+VITE_API_URL=http://localhost:5001/api
+```
+
+## Run the Frontend
+
+From the `client` directory:
+
+```bash
 npm run dev
 ```
 
 The frontend runs on:
-- `http://localhost:5173`
+
+```text
+http://localhost:5173
+```
+
+## Running the Complete Application
+
+Run the backend and frontend in separate terminals.
+
+### Terminal 1 - Backend
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+### Terminal 2 - Frontend
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
 
 ## API Overview
 
-TrustWall uses a REST API with JSON payloads and cookie-based authentication for the owner dashboard.
+The backend provides REST APIs for authentication, users, testimonial spaces, testimonials, public walls, and application health checks.
 
-Core API groups:
-- Authentication: `/api/auth`
-- Spaces: `/api/spaces`
-- Public spaces and submissions: `/api/public`
-- Testimonial moderation: `/api/testimonials` and `/api/spaces/:spaceId/testimonials`
-- Dashboard metrics: `/api/dashboard`
-- Uploads: `/api/uploads`
+### Health Check
 
-Detailed endpoint docs are available in [docs/api.md](docs/api.md).
+```http
+GET /api/health
+```
+
+### Authentication
+
+```http
+POST /api/auth/register
+POST /api/auth/login
+```
+
+### User Operations
+
+The application provides authenticated user-related operations according to the implemented backend routes.
+
+### Space Operations
+
+The application provides APIs for:
+
+* Creating testimonial spaces
+* Fetching spaces
+* Updating spaces
+* Managing space information
+
+### Testimonial Operations
+
+The application provides APIs for:
+
+* Submitting testimonials
+* Fetching testimonials
+* Managing testimonials
+* Displaying testimonials on public walls
+
+> Refer to the route files inside `server/routes/` for the complete and current endpoint list.
 
 ## Authentication
 
-TrustWall uses JWT-based authentication with HTTP-only cookies.
+TrustWall uses token-based authentication.
 
-How it works:
-1. A user registers or logs in.
-2. The server creates a JWT signed with a secret configured in the environment.
-3. The token is stored in an HTTP-only cookie, not in localStorage.
-4. Protected routes check the cookie via the auth middleware.
-5. The authenticated owner is attached to the request and used for authorization checks.
-
-This approach helps protect the token from client-side JavaScript access and reduces the risk of XSS-related token theft.
+* Users can register and log in.
+* Protected routes require authentication.
+* JWT tokens are used to identify authenticated users.
+* User-specific data is accessed through authenticated requests.
 
 ## Database Models
 
+The application uses MongoDB with Mongoose.
+
+The main data entities include:
+
 ### User
-- `name`: owner name
-- `email`: email address, unique and lowercase
-- `password`: hashed password
-- `role`: owner role
-- `avatar`: optional profile image URL
-- timestamps: created and updated time
+
+Stores user account information such as:
+
+* Name
+* Email
+* Password information
+* Account-related details
 
 ### Space
-- `name`: space name
-- `slug`: unique public URL segment
-- `description`: optional summary
-- `brandName`: optional brand label
-- `logoUrl`: optional logo URL
-- `primaryColor`: theme color
-- `welcomeTitle`: public welcome text
-- `welcomeMessage`: optional welcome message
-- `owner`: reference to the owning user
-- status and timestamps
+
+Represents a testimonial collection space.
+
+A space may contain:
+
+* Space name
+* Description
+* Owner information
+* Collection settings
+* Related testimonials
 
 ### Testimonial
-- `space`: parent space reference
-- `customerName`: customer display name
-- `customerEmail`: customer email, stored privately
-- `company`: optional company name
-- `jobTitle`: optional role/title
-- `rating`: numeric rating from 1 to 5
-- `review`: testimonial content
-- `avatarUrl`: optional uploaded avatar or public profile image
-- `status`: pending, approved, rejected, archived
-- `isFeatured`: feature flag
-- `isLiked`: like flag
-- timestamps and moderation metadata
+
+Stores customer feedback collected through a testimonial space.
+
+A testimonial may contain:
+
+* Customer name
+* Customer email or related information
+* Testimonial content
+* Related space
+* Creation date
+* Status or management information
+
+> The exact fields are defined in the Mongoose models inside `server/models/`.
+
+## Validation and Error Handling
+
+The application includes validation and error handling for common operations such as:
+
+* Required fields
+* Invalid user input
+* Authentication failures
+* Unauthorized requests
+* Invalid resource IDs
+* Database operation errors
+* API request failures
+
+Error responses are handled by the backend and displayed by the frontend where applicable.
 
 ## Security Considerations
 
-TrustWall includes basic protection for a production-ready MVP, including:
-- JWTs stored in HTTP-only cookies
-- password hashing with bcryptjs
-- environment-based configuration for database and secrets
-- MongoDB validation and input checks
-- CORS restricted to the frontend origin
-- rate limiting on authentication and public submission routes
-- upload validation for accepted file types and size limits
-- public APIs that do not expose private customer email data
-- moderation gating so approved testimonials are the only public-facing content
+TrustWall includes basic security practices suitable for a technical assessment project, including:
 
-Additional security recommendations for production:
-- use HTTPS in production
-- rotate JWT secrets regularly
-- add audit logging for ownership changes and moderation actions
-- restrict file storage to a safe and managed blob or object store
-- add additional validation for hostile or malformed content
+* JWT-based authentication
+* Protected backend routes
+* Environment variables for configuration
+* Password protection through authentication logic
+* User-specific data access
+* Backend validation and error handling
+
+This project is an assessment MVP and is not presented as a fully production-ready enterprise application.
+
+## Assumptions and Limitations
+
+* MongoDB must be available for the application to work correctly.
+* The application is intended to run locally during evaluation.
+* Environment variables must be configured before starting the backend.
+* The frontend and backend run on separate development ports.
+* Some advanced production features such as deployment automation, advanced monitoring, and enterprise-level security hardening are outside the current scope.
+* The exact API endpoints may change as development continues.
 
 ## Future Improvements
 
-Possible next improvements include:
-- analytics dashboards for conversion and testimonial engagement
-- email notifications for approvals, rejections, and new submissions
-- support for multiple user roles beyond owner-only access
-- sharing and embed analytics
-- localization for multi-language testimonial collection
-- AI-assisted moderation and summarization
-- CI/CD automation and deployment pipelines
-- advanced caching and performance tuning for public wall pages
+Possible future improvements include:
+
+* Email notifications for new testimonials
+* Advanced testimonial moderation
+* More detailed analytics
+* Role-based access control
+* Cloud deployment
+* Automated testing
+* Improved embed customization
+* Image and video testimonial support
+* Social media sharing
+* Custom branding options
+* Better accessibility support
+* Performance optimization
+
+## Demo Video
+
+Project explanation video:
+
+```text
+[Add your public demo video link here]
+```
+
+The video should cover:
+
+* Project introduction
+* Problem statement
+* Main features
+* Technology stack and reasons for choosing it
+* Application architecture
+* Database structure
+* Backend APIs and business logic
+* Frontend implementation
+* Technical decisions
+* Challenges faced
+* Additional features
+* Incomplete features and possible improvements
+
+## Repository
+
+GitHub Repository:
+
+https://github.com/vineethmakkena/trustwall
 
 ## Author
 
-TrustWall is a sample MERN project created for testimonial collection and social proof workflows.
+**Vineeth Makkena**
 
-Author: TrustWall Team
+B.Tech - Artificial Intelligence
+Parul University of Engineering and Technology
 
 ## License
 
-This project is intended for educational and local-development use unless otherwise specified by the project owner.
+This project is created for technical assessment and educational purposes.
