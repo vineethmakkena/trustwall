@@ -51,16 +51,67 @@ Backend:
 - CORS
 
 ## Screenshots Placeholder
+## Screenshots
 
-Below are placeholders for future screenshots and product visuals.
+### Sign Up Page
 
-![Dashboard Placeholder](https://via.placeholder.com/1200x700?text=TrustWall+Dashboard)
+![Sign Up Page](docs/screenshots/1.sign%20up%20page%20.png)
 
-![Public Collection Placeholder](https://via.placeholder.com/1200x700?text=Public+Collection+Page)
+### Sign In Page
 
-![Public Wall Placeholder](https://via.placeholder.com/1200x700?text=Public+Wall+of+Love)
+![Sign In Page](docs/screenshots/2.Sign%20in%20page.png)
 
-![Embed Generator Placeholder](https://via.placeholder.com/1200x700?text=Embed+Generator)
+### Overview Page
+
+![Overview Page](docs/screenshots/3.overview%20page%20.png)
+
+### Overview Details
+
+![Overview Details](docs/screenshots/3.1.overview%202.png)
+
+### Spaces Page
+
+![Spaces Page](docs/screenshots/4.spaces%20page%20.png)
+
+### Testimonials Page
+
+![Testimonials Page](docs/screenshots/5.testimonials%20page%20.png)
+
+### Space Creation Page
+
+![Space Creation Page](docs/screenshots/5.space%20creation%20page%20%20.png)
+
+### Insights Page
+
+![Insights Page](docs/screenshots/6.INsights%20page%20.png)
+
+### Settings Page
+
+![Settings Page](docs/screenshots/7.setting%20page%20.png)
+
+### Settings Details
+
+![Settings Details](docs/screenshots/7.1setting%20page%202.png)
+
+### Embed Generator
+
+![Embed Generator](docs/screenshots/8.embed-generator.png)
+
+### Public Wall
+
+![Public Wall](docs/screenshots/9.public%20wall.png)
+
+### Public Wall Details
+
+![Public Wall Details](docs/screenshots/9.1public%20wall%202.png)
+
+### Collection Link
+
+![Collection Link](docs/screenshots/10.copy%20collection%20link%20page%20%5C.png)
+
+### Collection Link Details
+
+![Collection Link Details](docs/screenshots/10.1cpy%20link%20collection%20page%202.png)
 
 ## Folder Structure
 
