@@ -486,7 +486,7 @@ Possible future improvements include:
 Project explanation video:
 
 ```text
-[Add your public demo video link here]
+https://drive.google.com/drive/folders/1lX41kr2vlOtRKCbyCMC2YedKmmPqbSwr?usp=sharing
 ```
 
 The video should cover:
