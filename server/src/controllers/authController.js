@@ -8,11 +8,10 @@ const AUTH_COOKIE = "trustwall_token";
 const COOKIE_OPTIONS = {
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
-  sameSite: "lax",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
   path: "/",
   maxAge: 7 * 24 * 60 * 60 * 1000,
 };
-
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
