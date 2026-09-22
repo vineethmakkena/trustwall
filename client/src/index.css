@@ -147,7 +147,12 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .dashboard-navbar__name { font-size: 12px; font-weight: 600; }
 .icon-button { align-items: center; background: transparent; border: 0; color: inherit; cursor: pointer; display: inline-flex; justify-content: center; padding: 6px; }
 .menu-trigger { display: none; }
-.dashboard-content { margin: 0 auto; max-width: 1150px; padding: 60px 40px; }
+.dashboard-content {
+  margin: 0;
+  max-width: 1440px;
+  padding: clamp(40px, 4vw, 60px) clamp(24px, 3.2vw, 48px);
+  width: 100%;
+}
 .page-stack { display: grid; gap: 31px; }
 .page-heading { align-items: end; display: flex; gap: 30px; justify-content: space-between; }
 .page-heading h1 { font-size: 52px; margin: 13px 0 9px; }
@@ -375,7 +380,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
   .embed-code__copy { position: static; margin: 0 13px 13px; width: calc(100% - 26px); }
 }
 
-.dashboard-stat-grid { display: grid; gap: 15px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dashboard-stat-grid { display: grid; gap: 15px; grid-template-columns: repeat(4, minmax(0, 1fr)); min-width: 0; }
 .dashboard-stat { border: 1px solid var(--line); min-height: 148px; padding: 20px; position: relative; }
 .dashboard-stat--sage { background: var(--sage); }
 .dashboard-stat--butter { background: var(--butter); }
@@ -392,8 +397,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .dashboard-stat--skeleton strong { height: 38px; margin-top: 26px; width: 38%; }
 .dashboard-stat--skeleton small { height: 9px; margin-top: 12px; width: 65%; }
 @keyframes dashboard-shimmer { to { opacity: .55; } }
-.dashboard-content-grid { display: grid; gap: 18px; grid-template-columns: .85fr 1.15fr; }
-.dashboard-panel { background: var(--surface); border: 1px solid var(--line); padding: 25px; }
+.dashboard-content-grid { display: grid; gap: 18px; grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr); min-width: 0; }
+.dashboard-panel { background: var(--surface); border: 1px solid var(--line); min-width: 0; overflow: hidden; padding: 25px; }
 .dashboard-panel__heading { align-items: start; display: flex; justify-content: space-between; }
 .dashboard-panel__heading h2 { font-size: 26px; margin-top: 10px; }
 .dashboard-panel__heading > svg { color: var(--coral-dark); }
@@ -412,11 +417,11 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .dashboard-rating-row > div { background: var(--paper); height: 7px; overflow: hidden; }
 .dashboard-rating-row i { background: var(--coral); display: block; height: 100%; }
 .dashboard-rating-row small { color: var(--muted); text-align: right; }
-.recent-testimonials__list { display: grid; gap: 17px; margin-top: 25px; }
-.recent-testimonial { align-items: start; display: flex; gap: 11px; }
+.recent-testimonials__list { display: grid; gap: 17px; margin-top: 25px; min-width: 0; }
+.recent-testimonial { align-items: start; display: flex; gap: 11px; min-width: 0; }
 .recent-testimonial__content { min-width: 0; width: 100%; }
-.recent-testimonial__top { align-items: center; display: flex; gap: 9px; justify-content: space-between; }
-.recent-testimonial__top strong { font-size: 12px; }
+.recent-testimonial__top { align-items: center; display: flex; gap: 9px; justify-content: space-between; min-width: 0; }
+.recent-testimonial__top strong { font-size: 12px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .recent-testimonial__top .status-badge { flex: 0 0 auto; }
 .recent-testimonial__content > p { color: var(--muted); font-family: var(--display); font-size: 14px; line-height: 1.35; margin: 7px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .recent-testimonial__meta { align-items: center; color: #899189; display: flex; font-size: 10px; gap: 10px; }
